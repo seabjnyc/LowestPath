@@ -32,7 +32,7 @@ class CostDetailsViewController: UIViewController {
                 // Set the results accordingly.
                 pathExists.text = "Path Exists: " + (result.pathCompleted ? "Yes":"No")
                 leastCost.text = "Total Cost: " +  "\(result.cost)"
-                leastCostPath.text = "Total Cost: " + "\(result.path)"
+                leastCostPath.text = "Min Path: " + "\(result.path)"
             }
         }
         // Check for Invalid or No input conditions
@@ -44,3 +44,30 @@ class CostDetailsViewController: UIViewController {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

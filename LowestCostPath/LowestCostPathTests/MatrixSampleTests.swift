@@ -180,5 +180,66 @@ class MatrixSampleTests: XCTestCase {
         
     }
     
+    // Sample 10: (3 * 3 - All One)
+    func testForSample10() {
+        let input = "1 1 1\n1 1 1\n1 1 1"
+        let expectedPaths: [[Int]] = [ [1, 1, 1],
+                                       [1, 1, 2],
+                                       [1, 1, 3],
+                                       [1, 2, 1],
+                                       [1, 2, 2],
+                                       [1, 2, 3],
+                                       [1, 3, 1],
+                                       [1, 3, 2],
+                                       [1, 3, 3],
+                                       [2, 1, 1],
+                                       [2, 1, 2],
+                                       [2, 1, 3],
+                                       [2, 2, 1],
+                                       [2, 2, 2],
+                                       [2, 2, 3],
+                                       [2, 3, 1],
+                                       [2, 3, 2],
+                                       [2, 3, 3],
+                                       [3, 1, 1],
+                                       [3, 1, 2],
+                                       [3, 1, 3],
+                                       [3, 2, 1],
+                                       [3, 2, 2],
+                                       [3, 2, 3],
+                                       [3, 3, 1],
+                                       [3, 3, 2],
+                                       [3, 3, 3]]
+        do {
+            let handler = try MatrixHandler(with: input)
+            if let result = handler.calculateMinimumCost() {
+                XCTAssertTrue(result.pathCompleted)
+                XCTAssertTrue(result.cost == 3)
+                XCTAssertTrue(expectedPaths.contains { $0 == result.path })
+            }
+        } catch let error {
+            XCTAssertNil(error)
+        }
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
